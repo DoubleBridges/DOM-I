@@ -58,3 +58,14 @@ for(let i=0; i<navBar.length; i++) {
 //cta
 let ctaText = document.querySelector(".cta-text h1");
 ctaText.textContent = siteContent.cta.h1;
+
+//cta image
+let ctaImg = document.querySelector("#cta-img");
+ctaImg.setAttribute('src', siteContent.cta['img-src']);
+
+//cta button
+let ctaBtn = document.querySelector('.cta-text button');
+ctaBtn.textContent = siteContent.cta.button;
+
+//main content
+let mainFirstH4 = document.query
