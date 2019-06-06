@@ -1,3 +1,8 @@
+// ({
+//   plugins: ['jsdom-quokka-plugin'],
+//   jsdom: {html: `<div id="test">Hello</div>`}
+// })
+
 const siteContent = {
   "nav": {
     "nav-item-1": "Services",
@@ -40,3 +45,13 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let navBar = document.querySelectorAll('a');
+
+let navArr = Object.values(siteContent.nav);
+
+for(let i=0; i<navBar.length; i++) {
+  navBar[i].textContent = navArr[i];
+}
+
+
