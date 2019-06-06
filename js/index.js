@@ -71,20 +71,21 @@ ctaBtn.textContent = siteContent.cta.button;
 //main content
 let textHeaders = document.querySelectorAll('h4');
 
-let h4Headers = Array.from(Object.values(siteContent['main-content']).filter(item => item.includes('h4')));
+let h4Headers = Array.from(Object.keys(siteContent['main-content']).filter(item => item.includes('h4')));
 
 let contentText = document.querySelectorAll('p');
 
-let mainContents = Array.from(Object.values(siteContent['main-content']).filter(item => item.includes('content')));
+let mainContents = Array.from(Object.keys(siteContent['main-content']).filter(item => item.includes('content')));
 
+textHeaders.forEach((item, i) => {
+  item.textContent = siteContent['main-content'][h4Headers[i]];
+});
 
-// contentText.forEach(item => {
-//   item = mainContents[i];
+contentText.forEach((item, i) => {
+  item.textContent = siteContent['main-content'][mainContents[i]];
+})
 
-// })
+let middleImg = document.querySelector('.middle-img');
 
-for(let i=0; i<h4Headers.length; i++) {
-  textHeaders[i].textContent = h4Headers[i];
-  contentText[i].textContent = mainContents[i];
-}
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
