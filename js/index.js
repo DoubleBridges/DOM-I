@@ -14,7 +14,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br> Is<br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -57,7 +57,8 @@ for(let i=0; i<navBar.length; i++) {
 
 //cta
 let ctaText = document.querySelector(".cta-text h1");
-ctaText.textContent = siteContent.cta.h1;
+
+ctaText.innerHTML = siteContent.cta.h1;
 
 //cta image
 let ctaImg = document.querySelector("#cta-img");
@@ -68,4 +69,22 @@ let ctaBtn = document.querySelector('.cta-text button');
 ctaBtn.textContent = siteContent.cta.button;
 
 //main content
-let mainFirstH4 = document.query
+let textHeaders = document.querySelectorAll('h4');
+
+let h4Headers = Array.from(Object.values(siteContent['main-content']).filter(item => item.includes('h4')));
+
+let contentText = document.querySelectorAll('p');
+
+let mainContents = Array.from(Object.values(siteContent['main-content']).filter(item => item.includes('content')));
+
+
+// contentText.forEach(item => {
+//   item = mainContents[i];
+
+// })
+
+for(let i=0; i<h4Headers.length; i++) {
+  textHeaders[i].textContent = h4Headers[i];
+  contentText[i].textContent = mainContents[i];
+}
+
