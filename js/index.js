@@ -33,7 +33,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br> Somewhere, USA<br>",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -89,3 +89,15 @@ let middleImg = document.querySelector('.middle-img');
 
 middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
+//contact
+let contactHeader = document.querySelector('.contact h4')
+
+contactHeader.textContent = siteContent.contact['contact-h4'];
+
+let contactPtags = document.querySelectorAll('.contact p');
+
+let contactInfo = Object.values(siteContent.contact);
+
+for(let i=1; i < contactPtags.length; i++) {
+  contactPtags[i].innerHTML = contactInfo[i];
+}
