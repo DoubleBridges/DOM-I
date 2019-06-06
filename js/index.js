@@ -46,6 +46,7 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+//Nav text content
 let navBar = document.querySelectorAll('a');
 
 let navArr = Object.values(siteContent.nav);
@@ -54,4 +55,6 @@ for(let i=0; i<navBar.length; i++) {
   navBar[i].textContent = navArr[i];
 }
 
-
+//cta
+let ctaText = document.querySelector(".cta-text h1");
+ctaText.textContent = siteContent.cta.h1;
